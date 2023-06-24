@@ -9,7 +9,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -31,6 +30,9 @@ public class E2P1_CarmenCastillo extends JFrame {
     static Scanner leer = new Scanner(System.in, "ISO-8859-1");
     static Scanner leerent = new Scanner(System.in);
     static ArrayList<Numero> numero = new ArrayList<>();
+    
+    static Numero N = new Numero();
+    
     static int cont = 0;
     static int contsub = 0;
     static boolean sub = true;
@@ -126,6 +128,7 @@ public class E2P1_CarmenCastillo extends JFrame {
                 switch (opcion) {
                     case 1:
                         agregarNum(numero);
+                        
                         cont++;
                         break;
 
@@ -151,7 +154,7 @@ public class E2P1_CarmenCastillo extends JFrame {
 
             case 2:
 
-                int opcion2 = Integer.parseInt(JOptionPane.showInputDialog(" \n Sumar Numeros. \n 1. Restar Numeros. \n 2. Multiplicar Numeros. \n 3. Salir. \n 4. Salir. \n Ingrese una opcion: "));
+                int opcion2 = Integer.parseInt(JOptionPane.showInputDialog(" \n 1.Sumar Numeros. \n 2. Restar Numeros. \n 3. Multiplicar Numeros. \n 4. Salir. \n Ingrese una opcion: "));
                 switch (opcion2) {
                     case 1:
 
@@ -196,6 +199,7 @@ public class E2P1_CarmenCastillo extends JFrame {
         Numero listanueva = new Numero();
         int base = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su base: "));
         listanueva.setBase(base);
+        
         //int base = listanueva.setBase(Integer.parseInt(JOptionPane.showInputDialog("Ingrese su base: ")));
         while (base < 2 || base > 35) {
             base = Integer.parseInt(JOptionPane.showInputDialog("Base invalida, re ingresela [2 - 35]: "));
@@ -209,7 +213,9 @@ public class E2P1_CarmenCastillo extends JFrame {
             num = JOptionPane.showInputDialog("Numero invalido, re ingresela: ");
             listanueva.setCadena(num);
         }
-
+        
+        //System.out.println(N.dectoBase(base));
+        
         listanum.add(listanueva);
         return listanum;
 
